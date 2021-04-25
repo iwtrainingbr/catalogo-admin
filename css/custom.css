@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  bottom: 0;
+  background-color: #efefef;
+  font-family: 'Roboto', sans-serif;
+}
+
+hr.login {
+  border-top: 1px solid rgba(255,255,255,0.5);
+}
+
+span {
+  cursor: default;
+}
+
+/* Style Cards Dashboard */
+.cardDashboard {
+  height: 11rem;
+  box-shadow: 4px 4px 4px rgba(0,0,0,0.25);
+  transition: 0.3s;
+}
+
+.cardInformation {
+  background-color: #FCA311;
+}
+
+.cardDashboard:hover {
+  margin-top: -0.5rem;
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.25);
+}
+
+.info > p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  cursor: default;
+}
+
+.info > .h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Style Table Dashboard */
+
+.tableInformation {
+  margin-top: 7rem;
+  padding: 1rem;
+}
+
+
+/* Style List Category */
+
+.inputSearchCategory {
+  border: none;
+}
+
+.resultSearchCategory {
+  margin-top: 7rem;
+}
+
+
+
+
+
