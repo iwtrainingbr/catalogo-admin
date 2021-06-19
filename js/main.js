@@ -7,6 +7,7 @@ let routes = {
   'nova-loja': addStore,
   'regioes': listRegions,
   'nova-regiao': addRegion,
+  'lojas-interessadas': listStoreLeads,
 }
 
 function updateContentPage(pageName) {

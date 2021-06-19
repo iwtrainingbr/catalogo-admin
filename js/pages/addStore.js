@@ -1,11 +1,20 @@
+let currentUrl = new URL(window.location.href);
+let idStoreLead = currentUrl.searchParams.get('id');
+
 function insertStore(newStore) {
   event.preventDefault()
 
   fetch(API_URL + 'stores.json', {
     method: 'POST',
     body: JSON.stringify(newStore),
-  })
-  
+  });
+
+  if (idStoreLead) {
+    fetch(API_URL + `store-leads/${idStoreLead}.json`, {
+      method: 'DELETE'
+    });
+  }
+
   alert('cadastrado com sucesso');
 
   document.getElementById('formStore').reset()
@@ -47,7 +56,7 @@ function validateFormStore() {
       region: region,
       category: category
     }
-    
+
     insertStore(newStore)
   }
 }
@@ -80,6 +89,17 @@ function addStore() {
 
 
   const storeForm = () => {
+    if (idStoreLead) {
+      fetch(API_URL+`store-leads/${idStoreLead}.json`)
+        .then(response => response.json())
+        .then(response => {
+            document.getElementById('nameStore').value = response.name;
+            document.getElementById('emailStore').value = response.email;
+            document.getElementById('phoneStore').value = response.phone;
+        });
+    }
+
+
     return `
       <form onsubmit="validateFormStore()"  method="post" id="formStore">
         <div class="form-group mt-5">

@@ -12,7 +12,7 @@ function deleteStore(id) {
 }
 
 function editStore(id) {
-  document.getElementById('nameStore').value = `${id}` 
+  document.getElementById('nameStore').value = `${id}`
 }
 
 function listStores() {
@@ -21,11 +21,10 @@ function listStores() {
     .then(response => response.json())
     .then(response => {
       for (let id in response) {
-        let store = response[id]
-        console.log(id)
-        
+        let store = response[id];
+
         document.getElementById('tableStore').innerHTML += `
-          <tr> 
+          <tr>
             <td><img src="${store.image}" alt="logo ${store.name}" width="100px"></td>
             <td class="align-middle">${store.name}</td>
             <td class="align-middle">${store.email}</td>
@@ -35,7 +34,7 @@ function listStores() {
               <button class="btn btn-danger" onclick="deleteStore('${id}')">Excluir</button>
             </td>
           </tr>
-        ` 
+        `
       }
     })
 
@@ -94,7 +93,7 @@ function listStores() {
       `
     }
 
-  
+
     const modal =  () => {
 
     return `
@@ -108,7 +107,7 @@ function listStores() {
               </button>
             </div>
             <div class="modal-body" id="storeModal">
-              ${formEditStore()} 
+              ${formEditStore()}
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
@@ -120,7 +119,7 @@ function listStores() {
     `
   }
 
-  
+
   return `
     ${navbar()}
     ${modal()}
