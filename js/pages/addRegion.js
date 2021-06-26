@@ -15,16 +15,13 @@ function validateFormRegion() {
   event.preventDefault()
 
   let name = document.getElementById('nameRegion').value
-  let description = document.getElementById('descriptionRegion').value
 
   if (name.length < 4) {
     alert('Por favor insira um noma com mais de 4 letras')
-  } else if (description.length < 10) {
-    alert('Por favor insira uma descricao com mais de 10 letras')
-  } else {
+  } 
+  else {
     const newRegion = {
       name: name,
-      description: description
     }
 
     insertRegion(newRegion)
@@ -41,12 +38,7 @@ function addRegion() {
               <div class="form-group col-md-8">
                 <input type="text" class="form-control" id="nameRegion" placeholder="Nome" required>
               </div>
-            </div>
-            <div class="form-row justify-content-center">
-              <div class="form-group col-md-8">
-                <textarea class="form-control" id="descriptionRegion" rows="5" placeholder="Descrição" required></textarea>
-              </div>
-            </div>
+            </div>     
           </div>
           <div class="form-row justify-content-center mb-4">
             <button class="btn btn-warning btn-lg" id="liveToastBtn">Enviar</button>

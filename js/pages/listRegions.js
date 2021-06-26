@@ -24,7 +24,6 @@ function listRegions() {
         document.getElementById('tableRegion').innerHTML += `
           <tr>
             <td>${region.name}</td>
-            <td>${region.cep}</td>
             <td>
               <button class="btn btn-warning">Editar</button>
               <button class="btn btn-danger" onclick="deleteRegion('${id}')">Excluir</button>
@@ -56,7 +55,6 @@ function listRegions() {
         <thead class="thead-dark">
           <tr>
             <th scope="col">Nome</th>
-            <th scope="col">Descrição</th>
             <th scope="col">Ação</th>
           </tr>
         </thead>
